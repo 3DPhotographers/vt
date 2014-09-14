@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<krpano version="1.17"
+        onstart="startup"
+        logkey="false"
+        bgcolor="#ffffff"
+        projectfloorplanurl=""
+        projecttitleid="project_title"
+        projectdescriptionid="">
+
+  <include url="%FIRSTXML%/chery_core.xml"/>
+  <include url="%FIRSTXML%/chery_messages_en.xml"/>
+
+  <action name="startup">
+    if (s !== null, if (startscene === null, set(startscene, get(s));); );
+    if (startscene === null,
+      set(startscene, pano9);
+    );
+    mainloadscene(get(startscene));
+    if (h !== null,
+      if (v !== null,
+        if (f !== null,
+          lookat(get(h), get(v), get(f));
+         ,
+          lookat(get(h), get(v));
+        );
+      );
+    );
+  </action>
+
+
+  
+  
+
+
+<scene name="pano9"
+       heading="0"
+       thumburl="%FIRSTXML%/chery_9/thumbnail.jpg"
+       backgroundsound=""
+       backgroundsoundloops="0"
+       titleid="pano9_title"
+       descriptionid=""
+       multires="false"
+       planar="false"
+       full360="false">
+
+    <autorotate horizon="0.000000" tofov="90.000000" waittime="1" speed="5"/>
+
+    <panoview h="0.000000" v="0.000000" fov="90.000000" hmin="-180" hmax="180" vmin="-69.9" vmax="65.84" fovmax="90" />
+    <view fisheye="0"
+          limitview="range"
+          hlookatmin="-180"
+          hlookatmax="180"
+          vlookatmin="-69.9"
+          vlookatmax="65.84"
+          maxpixelzoom="1.0"
+          fovmax="90"
+          fov="90.000000"
+          hlookat="0.000000"
+          vlookat="0.000000"/>
+
+    <preview url="%FIRSTXML%/chery_9/preview.jpg" type="CUBESTRIP" striporder="FRBLUD"/>
+
+
+
+    <image type="CUBE" devices="desktop">
+      <front url="chery_9/html5/0.jpg"/>
+      <right url="chery_9/html5/1.jpg"/>
+      <back  url="chery_9/html5/2.jpg"/>
+      <left  url="chery_9/html5/3.jpg"/>
+      <up    url="chery_9/html5/4.jpg"/>
+      <down  url="chery_9/html5/5.jpg"/>
+    </image>
+
+
+    <image type="CUBE" devices="html5">
+      <front url="chery_9/html5/0.jpg"/>
+      <right url="chery_9/html5/1.jpg"/>
+      <back  url="chery_9/html5/2.jpg"/>
+      <left  url="chery_9/html5/3.jpg"/>
+      <up    url="chery_9/html5/4.jpg"/>
+      <down  url="chery_9/html5/5.jpg"/>
+    </image>
+
+      <image type="CUBE" devices="tablet">
+        <front url="chery_9/tablet/0.jpg"/>
+        <right url="chery_9/tablet/1.jpg"/>
+        <back  url="chery_9/tablet/2.jpg"/>
+        <left  url="chery_9/tablet/3.jpg"/>
+        <up    url="chery_9/tablet/4.jpg"/>
+        <down  url="chery_9/tablet/5.jpg"/>
+      </image>
+      <image type="CUBE" devices="mobile">
+        <front url="chery_9/mobile/0.jpg"/>
+        <right url="chery_9/mobile/1.jpg"/>
+        <back  url="chery_9/mobile/2.jpg"/>
+        <left  url="chery_9/mobile/3.jpg"/>
+        <up    url="chery_9/mobile/4.jpg"/>
+        <down  url="chery_9/mobile/5.jpg"/>
+      </image>
+
+  <action name="setzorder2onstandardspots">
+    if (device.html5,
+      ifnot (device.desktop,
+
+
+      );
+    );
+  </action>  
+
+</scene>
+
+
+
+</krpano>
