@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<krpano version="1.17">
+
+<plugin name="gyroscope"
+        url="graphics/gyro.js"
+        keep="true"
+        devices="tablet|mobile"
+        onavailable="delayedcall(1, checkGyroAvailability(););"
+        enabled="true"
+        />
+
+<action name="changeGyroscopeState">
+  ifnot (plugin[gyroscope].available === undefined,
+    if (plugin[gyroscope].available,
+      switch(plugin[gyroscope].enabled);
+      if (plugin[gyroscope].enabled, events.dispatch(ongyroscopeon);, events.dispatch(ongyroscopeoff););
+    );
+  );
+</action>
+
+<action name="checkGyroAvailability">
+	ifnot (plugin[gyroscope].available === undefined, 
+		if (plugin[gyroscope].available,
+			set(tour_gyroscopedevices, true);
+			events.dispatch(ongyroscopeavailable);
+			if (plugin[gyroscope].enabled, events.dispatch(ongyroscopeon);, events.dispatch(ongyroscopeoff););
+		,
+			set(tour_gyroscopedevices, false);
+			set(plugin[gyroscope].enabled, false);
+		);
+	,
+		set(tour_gyroscopedevices, false);
+		set(plugin[gyroscope].enabled, false);
+	);
+</action>
+</krpano>
