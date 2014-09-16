@@ -1,7 +1,13 @@
-<widget id="com.vr3.glass" version="0.0.1">
-  <name>VR3.Glass</name>
-  <description>Virtual Reality</description>
-  <author email="zaluckyb@gmail.com" href="http://vr3.glass">Gerald Ferreira</author>
-  <content src="index.html" />
-  <access origin="*" />
+<?xml version="1.0" encoding="UTF-8"?>
+<widget xmlns     = "http://www.w3.org/ns/widgets"
+        xmlns:gap = "http://phonegap.com/ns/1.0"
+        id        = "com.vr3.glass"
+        versionCode="10"
+        version   = "1.1.0">
+    <!-- versionCode is optional and Android only -->
+    <name>Virtual Reality</name>
+    <description>
+        A simple employee directory application
+    </description>
+	<author email="zaluckyb@gmail.com" href="http://vr3.glass">Gerald Ferreira</author>
 </widget>
