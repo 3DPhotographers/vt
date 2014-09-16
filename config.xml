@@ -1,5 +1,5 @@
-<widget id="com.vr.3" version="0.0.1">
-  <name>VR3</name>
+<widget id="com.vr3.glass" version="0.0.1">
+  <name>VR3.Glass</name>
   <description>Virtual Reality</description>
   <author email="zaluckyb@gmail.com" href="http://vr3.glass">Gerald Ferreira</author>
   <content src="index.html" />
